@@ -4,7 +4,7 @@ import logo from "../../public/logos/logo.png";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 border-b-2">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -25,25 +25,31 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 space-y-3"
           >
             <NavLink to="/" className={({isActive}) => isActive ? "text-blue-500" : "" }>Home</NavLink>
-            <NavLink className={({isActive}) => isActive ? "text-blue-500" : "" }>Donation</NavLink>
-            <NavLink className={({isActive}) => isActive ? "text-blue-500" : "" }>Events</NavLink>
-            <NavLink className={({isActive}) => isActive ? "text-blue-500" : "" }>Blog</NavLink>
+            <NavLink to="/donation" className={({isActive}) => isActive ? "text-blue-500" : "" }>Donation</NavLink>
+            <NavLink to="/events" className={({isActive}) => isActive ? "text-blue-500" : "" }>Events</NavLink>
+            <NavLink to="/blog" className={({isActive}) => isActive ? "text-blue-500" : "" }>Blog</NavLink>
+            <button className="btn"><NavLink to="/register">Register</NavLink></button>
+            <button className="btn btn-primary">Admin</button>
           </ul>
+          
         </div>
         <NavLink to="/">
-          <img className="w-36" src={logo} alt="logo" />
+          <img className="w-44" src={logo} alt="logo" />
         </NavLink>
       </div>
       <div className="navbar-center hidden lg:flex ">
-        <ul className="menu menu-horizontal px-1 space-x-3">
+        <ul className="menu menu-horizontal px-1 space-x-5 items-center">
           <NavLink to="/" className={({isActive}) => isActive ? "text-blue-500" : "" }>Home</NavLink>
-          <NavLink className={({isActive}) => isActive ? "text-blue-500" : "" }>Donation</NavLink>
-          <NavLink className={({isActive}) => isActive ? "text-blue-500" : "" }>Events</NavLink>
-          <NavLink className={({isActive}) => isActive ? "text-blue-500" : "" }>Blog</NavLink>
+          <NavLink to="/donation" className={({isActive}) => isActive ? "text-blue-500" : "" }>Donation</NavLink>
+          <NavLink to="/events" className={({isActive}) => isActive ? "text-blue-500" : "" }>Events</NavLink>
+          <NavLink to="/blog" className={({isActive}) => isActive ? "text-blue-500" : "" }>Blog</NavLink>
+          <button className="btn"><NavLink to="/register">Register</NavLink></button>
+        <button className="btn btn-primary">Admin</button>
         </ul>
+        
       </div>
     </div>
   );
