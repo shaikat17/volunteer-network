@@ -24,7 +24,7 @@ const handleFormSubmit = (e) => {
       Swal.fire({
         position: 'center',
         icon: 'success',
-        title: 'Your work has been saved',
+        title: 'Event Created Successfully',
         showConfirmButton: false,
         timer: 1500
       })
