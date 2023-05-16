@@ -12,7 +12,7 @@ const Register = () => {
     const description = form.description.value;
     const photoUrl = form.photoUrl.value;
 
-    const data = { fullName, email, date, description, photoUrl };
+    const data = { fullName, email, date, description, photoUrl, events: [] };
     form.reset();
     fetch("http://127.0.0.1:3000/register", {
       method: "post",
@@ -22,6 +22,7 @@ const Register = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.acknowledged) {
+          localStorage.setItem('user',result.insertedId)
           Swal.fire({
             position: "center",
             icon: "success",
@@ -50,30 +51,30 @@ const Register = () => {
             <input
               type="text"
               placeholder="Full Name"
-              className="p-2 pl-0 placeholder:text-black bg-transparent border-b border-gray-300 w-full max-w-xs"
+              className="p-2 pl-3 pl-0 placeholder:text-black bg-transparent border-b border-gray-300 w-full max-w-xs"
               name="fullName"
             />
             <input
               type="text"
               placeholder="Username or Email"
-              className="p-2 pl-0 placeholder:text-black bg-transparent border-b border-gray-300 w-full max-w-xs"
+              className="p-2 pl-3 pl-0 placeholder:text-black bg-transparent border-b border-gray-300 w-full max-w-xs"
               name="email"
             />
             <input
               type="date"
-              className="p-2 pl-0 placeholder:text-black bg-transparent border-b border-gray-300 w-full max-w-xs"
+              className="p-2 pl-3 pl-0 placeholder:text-black bg-transparent border-b border-gray-300 w-full max-w-xs"
               name="date"
             />
             <textarea
               type="text"
               placeholder="Description"
-              className="p-2 pl-0 placeholder:text-black bg-transparent border-b border-gray-300 w-full max-w-xs"
+              className="p-2 pl-3 pl-0 placeholder:text-black bg-transparent border-b border-gray-300 w-full max-w-xs"
               name="description"
             />
             <input
               type="text"
               placeholder="Photo Link"
-              className="p-2 pl-0 placeholder:text-black bg-transparent border-b border-gray-300 w-full max-w-xs"
+              className="p-2 pl-3 pl-0 placeholder:text-black bg-transparent border-b border-gray-300 w-full max-w-xs"
               name="photoUrl"
             />
             <button className="btn btn-primary">Register</button>
