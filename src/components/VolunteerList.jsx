@@ -6,7 +6,7 @@ const VolunteerList = () => {
       <h1 className="mb-5 mt-3 text-2xl font-black">Add Event</h1>
       <div className="bg-[#E5E5E5] p-4 rounded h-screen">
         <div className="bg-white rounded overflow-x-auto">
-          <table className="table">
+          <table className="table w-full">
             {/* head */}
             <thead>
               <tr>
