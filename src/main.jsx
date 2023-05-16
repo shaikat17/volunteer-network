@@ -11,6 +11,7 @@ import Register from './components/Register.jsx';
 import AdminPage from './shared/AdminPage.jsx';
 import VolunteerList from './components/VolunteerList.jsx';
 import AddEvent from './components/AddEvent.jsx';
+import Events from './components/Events.jsx';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
         element: <AddEvent />
       }
     ]
+  },
+  {
+    path: "/events",
+    element: <Events />
   }
 ]);
 
